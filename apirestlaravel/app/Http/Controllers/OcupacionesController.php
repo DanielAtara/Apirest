@@ -12,7 +12,7 @@ class OcupacionesController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -28,7 +28,13 @@ class OcupacionesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ocupaciones=new Ocupaciones();
+        $ocupaciones->occupation_code=$request->occupation_code;
+        $ocupaciones->occupation_name=$request->occupation_name;
+        $ocupaciones->description=$request->description;
+        $ocupaciones->save;
+        return response()->json(["mensaje"=>"hola como estas"],201);
+
     }
 
     /**
